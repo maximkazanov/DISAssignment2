@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-
+//hg
 namespace Assignment_2
 {
   public partial class StockList

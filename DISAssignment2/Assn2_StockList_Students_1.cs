@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+//My test comment
 namespace Assignment_2
 {
   public partial class StockList

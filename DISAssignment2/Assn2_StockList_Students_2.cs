@@ -20,13 +20,11 @@ namespace Assignment_2
 
             List<StockNode> totalList = new List<StockNode>();
             totalList.Add(current);
-            while (current.Next != null)
-            {
-                totalList.Add(current.Next);
-                current = current.Next;
-            }
+            List<StockNode> newList = new List<StockNode>();
 
-            //List<StockNode> mergedList = 
+
+
+            //List<StockNode> mergedList = totalList.OrderByDescending(x => x.StockHolding.Name).ToList();
 
             return resultList;
     }
@@ -40,21 +38,29 @@ namespace Assignment_2
       Stock mostShareStock = null;
 
             StockNode current = this.head;
+            StockNode initialMax = this.head;
 
-            List<StockNode> unsortedList = new List<StockNode>();
-            unsortedList.Add(current);
-            while (current.Next != null)
+            if (current == null)
             {
-                unsortedList.Add(current.Next);
-                current = current.Next;
+                
             }
-            List<StockNode> sortedList = unsortedList.OrderByDescending(x => x.StockHolding.Holdings).ToList();
 
 
 
+            //StockNode current = this.head;
+
+            //List<StockNode> unsortedList = new List<StockNode>();
+            //unsortedList.Add(current);
+            //while (current.Next != null)
+            //{
+            //    unsortedList.Add(current.Next);
+            //    current = current.Next;
+            //}
+            //List<StockNode> sortedList = unsortedList.OrderByDescending(x => x.StockHolding.Holdings).ToList();
 
 
-            // write your implementation here
+
+            //write your implementation here
 
             return mostShareStock;
         }
@@ -72,18 +78,13 @@ namespace Assignment_2
 
             if (current == null)
                 return 0;
-            else if (current.Next == null && current2.Next == null)
+            else if (current.Next == null)
                 return 1;
             else
             {
-                while (current != null && current2 != null)
-                {
-                    current = current.Next;
-                    length++;
-                }
                 while (current != null)
                 {
-                    current2 = current2.Next;
+                    current = current.Next;
                     length++;
                 }
                 return length;

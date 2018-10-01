@@ -26,6 +26,7 @@ namespace Assignment_2
     public Stock MostShares()
     {
       Stock mostShareStock = null;
+            int rogram = 1;
 
       // write your implementation here
 

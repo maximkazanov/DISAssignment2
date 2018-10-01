@@ -16,17 +16,25 @@ namespace Assignment_2
     {
       StockList resultList = new StockList();
 
-            StockNode current = this.head;
+            //StockNode current = this.head;
 
-            List<StockNode> unsortedList = new List<StockNode>();
-            unsortedList.Add(current);
-            while (current.Next != null)
-            {
-                unsortedList.Add(current.Next);
-                current = current.Next;
-            }
+            //List<StockNode> mergingList = new List<StockNode>();
+            //mergingList.Add(current);
+            //while (current.Next != null)
+            //{
+            //    mergingList.Add(current.Next);
+            //    current = current.Next;
+            //    for ()
+            //    {
 
-            List<StockNode> mergedList = unsortedList.OrderBy(z => z.StockHolding.Name).ToList();
+            //    }
+
+
+            //}
+            
+
+            
+
 
             return resultList;
     }
@@ -40,25 +48,22 @@ namespace Assignment_2
       Stock mostShareStock = null;
 
             StockNode current = this.head;
-            StockNode initialMax = this.head;
+            //StockNode initialMax = this.head;
 
-            while (current != null)
-            {
-                
-            }
-
-
-
-            //StockNode current = this.head;
-
-            //List<StockNode> unsortedList = new List<StockNode>();
-            //unsortedList.Add(current);
-            //while (current.Next != null)
+            //while (current != null)
             //{
-            //    unsortedList.Add(current.Next);
-            //    current = current.Next;
+                
             //}
-            //List<StockNode> sortedList = unsortedList.OrderByDescending(x => x.StockHolding.Holdings).ToList();
+
+            List<StockNode> maxList = new List<StockNode>();
+            maxList.Add(current);
+            while (current.Next != null)
+            {
+                maxList.Add(current.Next);
+                current = current.Next;
+            }
+            List<StockNode> sortedlist = maxList.OrderByDescending(x => x.StockHolding.Holdings).ToList();
+            StockNode mostStock = sortedlist.First();
 
 
 

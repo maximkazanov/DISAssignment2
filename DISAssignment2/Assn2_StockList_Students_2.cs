@@ -18,13 +18,15 @@ namespace Assignment_2
 
             StockNode current = this.head;
 
-            List<StockNode> totalList = new List<StockNode>();
-            totalList.Add(current);
-            List<StockNode> newList = new List<StockNode>();
+            List<StockNode> unsortedList = new List<StockNode>();
+            unsortedList.Add(current);
+            while (current.Next != null)
+            {
+                unsortedList.Add(current.Next);
+                current = current.Next;
+            }
 
-
-
-            //List<StockNode> mergedList = totalList.OrderByDescending(x => x.StockHolding.Name).ToList();
+            List<StockNode> mergedList = unsortedList.OrderBy(z => z.StockHolding.Name).ToList();
 
             return resultList;
     }
@@ -40,7 +42,7 @@ namespace Assignment_2
             StockNode current = this.head;
             StockNode initialMax = this.head;
 
-            if (current == null)
+            while (current != null)
             {
                 
             }

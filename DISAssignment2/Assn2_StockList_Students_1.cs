@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
-//hg
 namespace Assignment_2
 {
   public partial class StockList
@@ -229,18 +229,62 @@ namespace Assignment_2
     //return type  : NA
     public void SortByValue()
     {
-      // write your implementation here
+            StockNode current = this.head;
 
-    }
+            List<StockNode> unsortedList = new List<StockNode>();
+            unsortedList.Add(current);
+            while (current.Next != null)
+            {
+                unsortedList.Add(current.Next);
+                current = current.Next;
+            }
+            List<StockNode> sortedList = unsortedList.OrderByDescending(s => s.StockHolding.Holdings).ToList();
 
-    //param        : NA
-    //summary      : Sort the list alphabatically
-    //return       : NA
-    //return type  : NA
-    public void SortByName()
+            this.head = sortedList[0];
+
+            StockNode current2 = this.head;
+            current2.Next = null;
+
+
+            for (int i = 1; i < sortedList.Count; i++)
+            {
+                current2.Next = sortedList[i];
+                current2 = current2.Next;
+                current2.Next = null;
+            }
+        }
+
+        //param        : NA
+        //summary      : Sort the list alphabatically
+        //return       : NA
+        //return type  : NA
+        public void SortByName()
     {
-      // write your implementation here
+            // write your implementation here
+            StockNode current = this.head;
 
+            List<StockNode> unsortedList = new List<StockNode>();
+            unsortedList.Add(current);
+            while (current.Next != null)
+            {
+                unsortedList.Add(current.Next);
+                current = current.Next;
+            }
+            List<StockNode> sortedList = unsortedList.OrderBy(s => s.StockHolding.Name).ToList();
+
+            this.head = sortedList[0];
+
+            StockNode current2 = this.head;
+            current2.Next = null;
+
+
+            for (int i = 1; i < sortedList.Count; i++)
+            {
+                current2.Next = sortedList[i];
+                current2 = current2.Next;
+                current2.Next = null;
+            }
+
+        }
     }
-  }
 }

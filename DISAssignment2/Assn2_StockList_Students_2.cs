@@ -14,10 +14,11 @@ namespace Assignment_2
     //return type  : StockList
     public StockList MergeList(StockList listToMerge)
     {
+      StockList resultList = new StockList();
 
             // write your implementation here
 
-            return resultList;
+      return resultList;
     }
 
     //param        : NA
@@ -27,24 +28,24 @@ namespace Assignment_2
     public Stock MostShares()
     {
       Stock mostShareStock = null;
-
+            int rogram = 1;
 
             // write your implementation here
 
             return mostShareStock;
         }
 
-        //param        : NA
-        //summary      : finds the number of nodes present in the list
-        //return       : length of list
-        //return type  : int
-        public int Length()
+    //param        : NA
+    //summary      : finds the number of nodes present in the list
+    //return       : length of list
+    //return type  : int
+    public int Length()
     {
-        int length = 0;
+      int length = 0;
 
+      // write your implementation here
+
+      return length;
     }
-    
-    
-
   }
 }

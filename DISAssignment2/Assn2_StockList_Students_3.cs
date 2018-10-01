@@ -13,8 +13,7 @@ namespace Assignment_2
     public decimal Value()
     {
       decimal value = 0.0m;
-      //WIP : DUMMY CHANGE
-      value += 1;
+
       // write your implementation here
 
       return value;

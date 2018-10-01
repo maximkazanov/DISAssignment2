@@ -16,9 +16,19 @@ namespace Assignment_2
     {
       StockList resultList = new StockList();
 
-            // write your implementation here
+            StockNode current = this.head;
 
-      return resultList;
+            List<StockNode> totalList = new List<StockNode>();
+            totalList.Add(current);
+            while (current.Next != null)
+            {
+                totalList.Add(current.Next);
+                current = current.Next;
+            }
+
+            //List<StockNode> mergedList = 
+
+            return resultList;
     }
 
     //param        : NA
@@ -28,7 +38,21 @@ namespace Assignment_2
     public Stock MostShares()
     {
       Stock mostShareStock = null;
-            int rogram = 1;
+
+            StockNode current = this.head;
+
+            List<StockNode> unsortedList = new List<StockNode>();
+            unsortedList.Add(current);
+            while (current.Next != null)
+            {
+                unsortedList.Add(current.Next);
+                current = current.Next;
+            }
+            List<StockNode> sortedList = unsortedList.OrderByDescending(x => x.StockHolding.Holdings).ToList();
+
+
+
+
 
             // write your implementation here
 
@@ -44,15 +68,22 @@ namespace Assignment_2
             int length = 0;
 
             StockNode current = this.head;
+            StockNode current2 = this.head;
+
             if (current == null)
                 return 0;
-            else if (current.Next == null)
+            else if (current.Next == null && current2.Next == null)
                 return 1;
             else
             {
-                while (current != null)
+                while (current != null && current2 != null)
                 {
                     current = current.Next;
+                    length++;
+                }
+                while (current != null)
+                {
+                    current2 = current2.Next;
                     length++;
                 }
                 return length;

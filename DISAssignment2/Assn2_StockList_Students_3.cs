@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Assignment_2
 {
@@ -39,6 +40,25 @@ namespace Assignment_2
     //return type  : NA
     public void Print()
     {
+            List<StockNode> printList = new List<StockNode>();
+            StockNode current = this.head;
+            //StockNode empty = ;
+            printList.Add(current);
+            while (current.Next != null)
+            {
+                printList.Add(current.Next);
+                current = current.Next;
+                if (current == null)
+                {
+
+                }
+
+            }
+
+            List<StockNode> listToPrint = printList.ToList();
+
+            Console.WriteLine(listToPrint);
+
       // write your implementation here
 
     }

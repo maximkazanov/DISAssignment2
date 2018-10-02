@@ -47,29 +47,31 @@ namespace Assignment_2
     {
       Stock mostShareStock = null;
 
+            Stock result = new Stock();
             StockNode current = this.head;
-            //StockNode initialMax = this.head;
 
-            //while (current != null)
-            //{
-                
-            //}
-
-            List<StockNode> maxList = new List<StockNode>();
-            maxList.Add(current);
-            while (current.Next != null)
+            if (current == null)
             {
-                maxList.Add(current.Next);
-                current = current.Next;
+                return result;
             }
-            List<StockNode> sortedlist = maxList.OrderByDescending(x => x.StockHolding.Holdings).ToList();
-            StockNode mostStock = sortedlist.First();
+            else if (current.Next == null)
+            {
+                result = current.StockHolding;
+                return result;
+            }
+            else
+            {
+                List<StockNode> maxList = new List<StockNode>();
+                maxList.Add(current);
 
-
-
-            //write your implementation here
-
-            return mostShareStock;
+                while (current.Next != null)
+                {
+                    maxList.Add(current.Next);
+                    current = current.Next;
+                }
+                result = maxList.OrderByDescending(x => x.StockHolding.Holdings).ToList().First().StockHolding;
+                return result;
+            }
         }
 
         //param        : NA
@@ -81,7 +83,6 @@ namespace Assignment_2
             int length = 0;
 
             StockNode current = this.head;
-            StockNode current2 = this.head;
 
             if (current == null)
                 return 0;

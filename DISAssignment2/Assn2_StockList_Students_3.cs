@@ -39,8 +39,23 @@ namespace Assignment_2
     //return type  : NA
     public void Print()
     {
-      // write your implementation here
+            Stock toPrint = new Stock();
+            StockNode current = this.head;
 
+            if (current == null)
+            {
+                Console.WriteLine(toPrint);
+            }
+            else
+            {
+                while (current != null)
+                {
+                    toPrint = current.StockHolding;
+                    Console.WriteLine(toPrint);
+                    current = current.Next;
+                }
+            }
+
+        }
     }
-  }
 }

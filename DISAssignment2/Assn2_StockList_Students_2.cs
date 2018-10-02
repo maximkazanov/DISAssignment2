@@ -14,29 +14,40 @@ namespace Assignment_2
     //return type  : StockList
     public StockList MergeList(StockList listToMerge)
     {
-      StockList resultList = new StockList();
+            StockList resultList = new StockList();
+            StockNode current1 = this.head;
+            StockNode current2 = listToMerge.head;
 
-            //StockNode current = this.head;
-
-            //List<StockNode> mergingList = new List<StockNode>();
-            //mergingList.Add(current);
-            //while (current.Next != null)
-            //{
-            //    mergingList.Add(current.Next);
-            //    current = current.Next;
-            //    for ()
-            //    {
-
-            //    }
-
-
-            //}
-            
-
-            
-
-
-            return resultList;
+            if (current1 == null && current2 == null)
+            {
+                return resultList;
+            }
+            else if (current1 == null)
+            {
+                resultList = listToMerge;
+                return resultList;
+            }
+            else if (current2 == null)
+            {
+                resultList = this;
+                return resultList;
+            }
+            else
+            {
+                while (current1 != null)
+                {
+                    resultList.AddStock(current1.StockHolding);
+                    current1 = current1.Next;
+                }
+                resultList.SortByName();
+                while (current2 != null)
+                {
+                    resultList.AddStock(current2.StockHolding);
+                    current2 = current2.Next;
+                }
+                resultList.SortByName();
+                return resultList;
+            }
     }
 
     //param        : NA
@@ -45,8 +56,6 @@ namespace Assignment_2
     //return type  : Stock
     public Stock MostShares()
     {
-      Stock mostShareStock = null;
-
             Stock result = new Stock();
             StockNode current = this.head;
 

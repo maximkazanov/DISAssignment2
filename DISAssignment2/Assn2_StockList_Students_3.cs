@@ -50,6 +50,7 @@ namespace Assignment_2
     //return type  : NA
     public void Print()
     {
+            this.SortByName();
             Stock toPrint = new Stock();
             StockNode current = this.head;
 

@@ -12,12 +12,23 @@ namespace Assignment_2
     //return type  : decimal
     public decimal Value()
     {
-      decimal value = 0.0m;
-      //WIP : DUMMY CHANGE
-      value += 1;
-      // write your implementation here
+            decimal value = 0.0m;
+            Stock toPrint = new Stock();
+            StockNode current = this.head;
 
-      return value;
+            if (current == null)
+            {
+                return value;
+            }
+            else
+            {
+                while (current != null)
+                {
+                    value = value + current.StockHolding.CurrentPrice*current.StockHolding.Holdings;
+                    current = current.Next;
+                }
+                return value;
+            }
     }
 
     //param  (StockList) listToCompare     : StockList which has to comared for similarity index

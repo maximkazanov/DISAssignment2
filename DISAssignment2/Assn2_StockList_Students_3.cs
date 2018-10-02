@@ -50,12 +50,54 @@ namespace Assignment_2
     //return type  : int
     public int Similarity(StockList listToCompare)
     {
-      int similarityIndex = 0;
+        // Introduces intial int for similarity index as 0. This is 
+        // currently a placeholder and will be modified accordingly.
 
-      // write your implementation here
+        int similarityIndex = 0;
 
-      return similarityIndex;
-    }
+        // An "if - else" statement is introduced. The if section returns
+        // the default value if the lists used for comparison are empty.
+
+        if (this.IsEmpty() || listToCompare.IsEmpty())
+        {
+            return similarityIndex;
+        }
+
+        // The else statement introduces StockNodes "current1" and "current2".
+        // These represent the initial list and the list for comparison to the
+        // initial list.
+
+        else
+        {
+            StockNode current1 = this.head;
+            StockNode current2 = listToCompare.head;
+
+            // The While loop works while both lists are not null. While this loop
+            // is running, it uses the CompareTo() function to check each currently
+            // active node from each list to see if they match or not. The index score
+            // then increases if that is the case. It then cycles the two StockNodes
+            // to the next node in the list, until no nodes remain.
+
+            while (current1 != null)
+            {
+                while (current2 != null)
+                {
+                    if (current1.StockHolding.Name.CompareTo(current2.StockHolding.Name) == 0)
+                    {
+                        similarityIndex++;
+                    }
+                    current2 = current2.Next;
+                }
+                current2 = listToCompare.head;
+                current1 = current1.Next;
+            }
+
+            // Finally, the loop then produces the final similarityIndex. The higher the value
+            // in the index, the more similar the two lists are.
+
+            return similarityIndex;
+        }
+        }
 
     //param        : NA
     //summary      : Print all the nodes present in the list

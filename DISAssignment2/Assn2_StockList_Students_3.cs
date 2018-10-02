@@ -11,10 +11,23 @@ namespace Assignment_2
     //return       : total value
     //return type  : decimal
     public decimal Value()
-    {
+        {
+
+            //The initial decimal variable “value” is introduced with a value of 0.0m, 
+            //the m present to signify the use of abbreviations for larger numbers, m 
+            //standing for million.Additionally, Stock “toPrint” and the StockNode “current” 
+            //are introduced, “toPrint” serving as a placeholder, and “current” initializing 
+            //the start of the list of stocks.
+
             decimal value = 0.0m;
             Stock toPrint = new Stock();
             StockNode current = this.head;
+
+            //An if-else statement is introduced to ensure the function doesn’t cause a program 
+            //error from the list reaching null, allowing the nodes to cycle through to completion. 
+            //Within the else statement is a while loop, which sums the current value listed outside 
+            //of the loop with the product of the holdings and price of the current node This then 
+            //produces a value for each node, and thus each Stock in the portfolio.
 
             if (current == null)
             {
@@ -49,10 +62,20 @@ namespace Assignment_2
     //return       : NA
     //return type  : NA
     public void Print()
-    {
+        {
+
+            //A placeholder Stock “toPrint” and the StockNode 
+            //“current” to initialize the nodes are introduced.
+
             this.SortByName();
             Stock toPrint = new Stock();
             StockNode current = this.head;
+
+            //An if-else statement is introduced which cycles through each node 
+            //and prints it to the console while the “current” does not signify 
+            //as null.Once it does signify as null, the loop will close by printing the
+            //final node listed. The result is each node is printed out based on their 
+            //respective frame of reference in the program.
 
             if (current == null)
             {

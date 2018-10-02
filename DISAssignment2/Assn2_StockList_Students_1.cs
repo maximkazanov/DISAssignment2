@@ -229,19 +229,40 @@ namespace Assignment_2
         //return type  : NA
         public void SortByValue()
         {
+            //Initial StockNode “current” was introduced, signifying the beginning 
+            //of the Nodes and thus information to be pulled.
             StockNode current = this.head;
 
+            //An if loop was introduced to serve as a break once the list of 
+            //referenced stocks run out, to avoid inducing a null error.
             if (current != null && current.Next != null)
             {
-                List<StockNode> unsortedList = new List<StockNode>();
+
+                //Within the if loop is the introduction of the StockNode list 
+                //labelled “unsortedList”, which will compile all related stocks 
+                //the function is called for into a usable list for what the 
+                //function requires.With this introduction includes a while 
+                //loop to cycle through subsequent Nodes while the StockNode 
+                //does not read null.
+               List <StockNode> unsortedList = new List<StockNode>();
                 unsortedList.Add(current);
                 while (current.Next != null)
                 {
                     unsortedList.Add(current.Next);
                     current = current.Next;
                 }
-                List<StockNode> sortedList = unsortedList.OrderByDescending(s => s.StockHolding.Holdings).ToList();
 
+                //Using LINQ, a new list is formed that sorts the previously 
+                //produced list under the criteria of Order By Descending
+                //(Greatest to Least), using the Holdings value as a reference 
+                //for that criteria. The function then compiles it into a new List.
+
+               List<StockNode> sortedList = unsortedList.OrderByDescending(s => s.StockHolding.Holdings).ToList();
+
+
+                //A new StockNode is introduced, labelled “current2”. This, along with the 
+                //subsequent for loop, adds each value from the new sorted list in order, 
+                //to be printed in each subsequent line.
                 this.head = sortedList[0];
 
                 StockNode current2 = this.head;
@@ -263,6 +284,12 @@ namespace Assignment_2
         //return type  : NA
         public void SortByName()
         {
+
+            //This function is handled in a near identical fashion to SortByValue(). The primary 
+            //difference between the two is that instead of the sorted list ordering them from greatest                                                                                   
+            //to least by the number of holdings, the use of LINQ instead sorts the stocks in descending 
+            //order alphabetically.
+
             StockNode current = this.head;
 
             if (current != null && current.Next != null)

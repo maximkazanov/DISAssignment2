@@ -4,6 +4,16 @@ using System.Text;
 using System.Linq;
 using System.IO;
 
+// Matthew Matos Self-Reflection
+
+//Looking back at the week of trials and tribulations that went into this assignment, I believe that 
+//a better foundational knowledge of C# and LINQ functions would serve me a lot better in the future. 
+//The primary problem that I faced while working on this assignment was having a below-rudimentary 
+//understanding of just exactly how information was being called by all of the scripts. Even now, I 
+//still don’t have a complete understanding of how exactly StockNode functions in the capacity that it does. 
+//Additionally, while we did have the basics of classes and LINQ functions explained to us in class, applying 
+//that across multiple scripts produces a new problem entirely.
+
 namespace Assignment_2
 {
   public partial class StockList

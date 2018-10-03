@@ -136,3 +136,11 @@ namespace Assignment_2
         }
     }
 }
+/*
+Self reflection by Haritha Diraneyya
+From the number of focused days spent on this assignment, I estimate it took me about 18 hours (and probably more). However, my case *cannot be generalized* because of my poor foundation (I do not think it would have taken me more than seven hours were it not for that). So the majority of these hours was invested in figuring the basic concepts needed to solve the assignment rather than actually solving the assignment itself. Although I was finally able to make minor contributions, I am immensely thankful for my team-mates who were able to make for my shortcomings caused by my lack of foundation.
+The assignment forced me to do the needful to understand new concepts under two main categories:
+1) the first is to become comfortable with git as a tool of version control tool and to actually experiment it with classmates. Although not required in this assignment, my teammates and I experminted a bit with creating new branches and merging them into the master branch.
+2) I started to become comfortable with the code structure related to classes. I now understand how to "encapsulate" declared objects in linked list structure composed of nodes and how we can flexibly play around the these open-ended lists.
+Now in my case, some extra hints on how things related to each other would not hurt, but then again I understand that for more advanced students this might seem too much obvious and unchallenging.
+ */

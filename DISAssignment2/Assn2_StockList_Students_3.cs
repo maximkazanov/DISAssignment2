@@ -37,7 +37,7 @@ namespace Assignment_2
             {
                 while (current != null)
                 {
-                    value = value + current.StockHolding.CurrentPrice*current.StockHolding.Holdings;
+                    value = value + current.StockHolding.CurrentPrice * current.StockHolding.Holdings;
                     current = current.Next;
                 }
                 return value;

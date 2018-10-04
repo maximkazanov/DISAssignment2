@@ -1,4 +1,13 @@
-﻿using System;
+﻿//Maxim Kazanov: I enjoyed completing this assignment because 1) it was about building end-to-end solution and 
+//2) it was a comprehensive, integrated test of key aspects of software development: objects manipulation, 
+//querying and working with data in object-oriented environment, debugging, collaboration. For example, 
+//working with Git, understanding how to override or not to override other people’s code, “undoing” changes 
+//was a by-product of completing bigger assignment. It’s like learning a foreign language to understand 
+//books, movies or speech compared to just memorizing foreign words for its own sake. The assignment had 
+//a good amount of repetition which resulted in “muscle memory” on top surprisingly steep learning curve 
+//so that when assignment was completed my own legacy code of first methods seemed clumsy and unprofessional.
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
@@ -245,10 +254,9 @@ namespace Assignment_2
                 //loop to cycle through subsequent Nodes while the StockNode 
                 //does not read null.
                List <StockNode> unsortedList = new List<StockNode>();
-                unsortedList.Add(current);
-                while (current.Next != null)
+                while (current != null)
                 {
-                    unsortedList.Add(current.Next);
+                    unsortedList.Add(current);
                     current = current.Next;
                 }
 
@@ -264,10 +272,8 @@ namespace Assignment_2
                 //subsequent for loop, adds each value from the new sorted list in order, 
                 //to be printed in each subsequent line.
                 this.head = sortedList[0];
-
                 StockNode current2 = this.head;
                 current2.Next = null;
-
 
                 for (int i = 1; i < sortedList.Count; i++)
                 {
@@ -295,10 +301,9 @@ namespace Assignment_2
             if (current != null && current.Next != null)
             {
                 List<StockNode> unsortedList = new List<StockNode>();
-                unsortedList.Add(current);
-                while (current.Next != null)
+                while (current != null)
                 {
-                    unsortedList.Add(current.Next);
+                    unsortedList.Add(current);
                     current = current.Next;
                 }
                 List<StockNode> sortedList = unsortedList.OrderBy(s => s.StockHolding.Name).ToList();

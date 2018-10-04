@@ -109,7 +109,6 @@ namespace Assignment_2
             //A placeholder Stock “toPrint” and the StockNode 
             //“current” to initialize the nodes are introduced.
 
-            this.SortByName();
             Stock toPrint = new Stock();
             StockNode current = this.head;
 
